@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">AURELION watch emblem</title>
+  <desc id="desc">A refined midnight-blue watch dial with a champagne-gold bezel, Roman-inspired hour indices and precision hands.</desc>
+  <defs>
+    <linearGradient id="case" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0c4"/>
+      <stop offset=".25" stop-color="#d5b36f"/>
+      <stop offset=".58" stop-color="#806039"/>
+      <stop offset=".82" stop-color="#f0d99c"/>
+      <stop offset="1" stop-color="#8a673b"/>
+    </linearGradient>
+    <radialGradient id="dial" cx="34%" cy="26%" r="78%">
+      <stop offset="0" stop-color="#263c50"/>
+      <stop offset=".58" stop-color="#111e2c"/>
+      <stop offset="1" stop-color="#080f19"/>
+    </radialGradient>
+    <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0c7"/>
+      <stop offset=".5" stop-color="#d7b46f"/>
+      <stop offset="1" stop-color="#8c6839"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/>
+      <feOffset dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".42"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Short integrated lugs and a fluted crown make the mark read as a watch, not a sphere. -->
+    <path d="M37 4h22l4 12H33zM33 80h30l-4 12H37z" fill="url(#case)" stroke="#f4dfad" stroke-opacity=".5" stroke-width=".8"/>
+    <rect x="78" y="41" width="13" height="14" rx="3.5" fill="url(#case)" stroke="#f5e0b0" stroke-opacity=".65" stroke-width=".8"/>
+    <path d="M81 43v10M84 42v12M87 43v10" stroke="#72532e" stroke-opacity=".72" stroke-width="1"/>
+    <circle cx="48" cy="48" r="39" fill="#070d15" stroke="url(#case)" stroke-width="3.4"/>
+    <circle cx="48" cy="48" r="34.8" fill="url(#dial)" stroke="#e6c987" stroke-opacity=".8" stroke-width="1.05"/>
+    <circle cx="48" cy="48" r="30.5" fill="none" stroke="#d5b575" stroke-opacity=".32" stroke-width=".8"/>
+    <circle cx="48" cy="48" r="27.5" fill="none" stroke="#f4dfae" stroke-opacity=".13" stroke-width=".6"/>
+    <!-- Applied hour batons, with longer cardinal markers. -->
+    <g stroke="url(#case)" stroke-linecap="round">
+      <path d="M48 17.2v5.3M48 73.5v5.3M17.2 48h5.3M73.5 48h5.3" stroke-width="2.5"/>
+      <path d="m26.2 26.2 3.6 3.6M66.2 66.2l3.6 3.6M69.8 26.2l-3.6 3.6M29.8 66.2l-3.6 3.6" stroke-width="2"/>
+      <path d="M34.7 20.6l1.8 4.2M59.5 71.2l1.8 4.2M75.4 34.7l-4.2 1.8M24.8 59.5l-4.2 1.8M61.3 20.6l-1.8 4.2M36.5 71.2l-1.8 4.2M20.6 34.7l4.2 1.8M71.2 59.5l4.2 1.8" stroke-width="1.05"/>
+    </g>
+    <!-- A poised two-hand display and a fine seconds hand. -->
+    <path d="M47.1 50.4 37.4 35.1Q36.4 33.5 38 32.6q1.5-.9 2.6.6L49.4 47z" fill="url(#hand)" stroke="#fff0c8" stroke-opacity=".45" stroke-width=".65"/>
+    <path d="M49.3 49.1 62.3 35.8q1.35-1.35 2.55-.05 1.1 1.25-.25 2.55L50.2 50.8z" fill="url(#hand)" stroke="#fff0c8" stroke-opacity=".45" stroke-width=".65"/>
+    <path d="M48 51.5 53.5 20.7" stroke="#b56b58" stroke-width="1.15" stroke-linecap="round"/>
+    <circle cx="48" cy="48" r="3.5" fill="url(#case)" stroke="#fff0c4" stroke-width=".8"/>
+    <circle cx="48" cy="48" r="1.1" fill="#fff3d0"/>
+    <path d="M28 14.7a39 39 0 0 1 40 0" fill="none" stroke="#fff1c8" stroke-opacity=".45" stroke-width=".8"/>
+  </g>
+</svg>

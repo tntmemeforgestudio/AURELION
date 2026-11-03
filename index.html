@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="application-name" content="AURELION — Creative TNT">
+  <link rel="icon" type="image/svg+xml" href="aurelion-mark.svg?v=0.9">
+  <link rel="icon" type="image/png" sizes="64x64" href="aurelion-mark-64.png?v=0.9">
+  <link rel="apple-touch-icon" sizes="180x180" href="aurelion-mark-180.png?v=0.9">
+  <meta name="description" content="AURELION — đồng hồ cơ khí 3D của Creative TNT với khung xem studio, xoay tự do và mô hình bộ máy cơ khí.">
+  <title>AURELION — Creative TNT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand-mini" href="#top" aria-label="Creative TNT — đầu trang">
+        <img class="aurelion-brand-mark aurelion-brand-mark-small" src="aurelion-mark.svg" alt="">
+        <span class="brand-mini-copy">
+          <strong>CREATIVE TNT</strong>
+          <small>TIMEPIECE DIVISION</small>
+        </span>
+      </a>
+      <div class="edition-tag"><span class="edition-dot"></span> MECHANICAL OBJECT STUDY <span class="edition-separator">/</span> 007</div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="main-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE GOLDEN CELESTIAL COLLECTION</div>
+        <h1 id="main-title">AURELION</h1>
+        <p class="intro-subtitle">Thời gian, được chế tác thành nghệ thuật.</p>
+        <p class="intro-note">Giữ mặt số La Mã nổi trên men guilloché; kính sapphire vòm được ép kín trong gioăng và vành giữ; mặt đáy sapphire trong để quan sát bộ máy cơ khí nhiều tầng.</p>
+        <div class="movement-reference">MOVEMENT ARCHITECTURE STUDY <span>·</span> ETA 2824-2 <span>·</span> LINKED GEAR TRAIN</div>
+      </section>
+
+      <section class="watch-stage" aria-label="Đồng hồ cơ khí 3D Aurelion">
+        <div class="stage-aura" aria-hidden="true"></div>
+        <div class="watch-canvas-frame" id="watch-viewer">
+          <canvas id="watch-3d" aria-label="Mô hình đồng hồ 3D, có thể xoay tự do để quan sát mặt số và bộ máy bên trong"></canvas>
+          <div class="canvas-vignette" aria-hidden="true"></div>
+          <div class="viewer-toolbar" role="toolbar" aria-label="Điều khiển khung xem 3D">
+            <button class="viewer-control" id="zoom-out" type="button" aria-label="Thu nhỏ" title="Thu nhỏ">−</button>
+            <button class="viewer-control viewer-fit" id="reset-view" type="button" title="Đưa mô hình vừa khung">VỪA KHUNG</button>
+            <button class="viewer-control" id="zoom-in" type="button" aria-label="Phóng to" title="Phóng to">+</button>
+            <span class="toolbar-divider" aria-hidden="true"></span>
+            <button class="viewer-control viewer-fullscreen" id="fullscreen-view" type="button" aria-label="Mở toàn màn hình" title="Mở toàn màn hình">⛶</button>
+            <div class="quality-switch" role="group" aria-label="Chế độ đồ họa">
+              <button class="viewer-control viewer-quality" id="quality-smooth" type="button" aria-label="Chọn chế độ Mượt" aria-pressed="false" title="Giảm tải đồ họa">MƯỢT</button>
+              <button class="viewer-control viewer-quality" id="quality-hd" type="button" aria-label="Chọn chế độ HD" aria-pressed="true" title="Ưu tiên độ nét">HD</button>
+            </div>
+          </div>
+          <div class="view-hint"><span class="mouse-icon" aria-hidden="true">⌖</span> KÉO ĐỂ XOAY <i></i> CUỘN / CHỤM ĐỂ ZOOM <i></i> NHẤP ĐÚP ĐỂ TOÀN MÀN HÌNH</div>
+          <div class="canvas-status" id="render-status"><span></span> 3D ENGINE STARTING</div>
+        </div>
+      </section>
+
+      <section class="time-console" aria-label="Thông tin thời gian">
+        <div class="console-topline"><span>PRECISION TIME DISPLAY</span><span class="live-status"><i></i> LIVE</span></div>
+        <div class="digital-time" id="digital-time" aria-live="off">--:--:--</div>
+        <div class="date-line" id="date-line">Đang đồng bộ thời gian…</div>
+        <div class="console-divider"></div>
+        <div class="timezone-row">
+          <div class="timezone-label">
+            <span class="label-kicker">TIME ZONE</span>
+            <strong id="zone-name">Việt Nam · Hồ Chí Minh</strong>
+            <small id="zone-offset">GMT+07:00</small>
+          </div>
+          <label class="select-wrap" for="timezone-select">
+            <span class="sr-only">Chọn múi giờ</span>
+            <select id="timezone-select">
+              <option value="Asia/Ho_Chi_Minh" selected>Việt Nam — GMT+7</option>
+              <option value="Asia/Bangkok">Bangkok — GMT+7</option>
+              <option value="Asia/Singapore">Singapore — GMT+8</option>
+              <option value="Asia/Tokyo">Tokyo — GMT+9</option>
+              <option value="Asia/Seoul">Seoul — GMT+9</option>
+              <option value="Asia/Dubai">Dubai — GMT+4</option>
+              <option value="Europe/London">London — GMT+0/+1</option>
+              <option value="Europe/Paris">Paris — GMT+1/+2</option>
+              <option value="America/New_York">New York — GMT−5/−4</option>
+              <option value="America/Los_Angeles">Los Angeles — GMT−8/−7</option>
+              <option value="Australia/Sydney">Sydney — GMT+10/+11</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">⌄</span>
+          </label>
+        </div>
+      </section>
+
+      <div class="movement-specs" aria-label="Thông tin bộ máy tham chiếu">
+        <div><strong>25.6 mm</strong><span>ĐƯỜNG KÍNH MÁY</span></div>
+        <div><strong>4.6 mm</strong><span>ĐỘ DÀY MÁY</span></div>
+        <div><strong>28,800</strong><span>DAO ĐỘNG / GIỜ</span></div>
+        <div><strong>25</strong><span>CHÂN KÍNH</span></div>
+      </div>
+
+      <div class="asset-export">
+        <button id="export-glb" type="button"><span aria-hidden="true">↓</span> XUẤT MÔ HÌNH 3D · .GLB</button>
+        <p id="export-status">Xuất hình học để mở trong Blender hoặc nhập vào game engine. GLB lưu tư thế tại thời điểm xuất, không kèm hoạt ảnh.</p>
+      </div>
+      <div class="craft-note">A MECHANICAL TIMEPIECE STUDY · CREATIVE TNT</div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-brand">
+        <img class="aurelion-brand-mark aurelion-brand-mark-large" src="aurelion-mark.svg" alt="">
+        <div class="footer-brand-text">
+          <strong>CREATIVE TNT</strong>
+          <span>IMAGINATION · DESIGN · CREATION</span>
+        </div>
+      </div>
+      <div class="developer-credit">DEVELOPED BY <strong>TNT MEMEFORGE STUDIO</strong></div>
+      <div class="footer-bottom"><span>AURELION · DIGITAL ARTIFACT 001</span><span>© <span id="year"></span> CREATIVE TNT</span></div>
+    </footer>
+  </div>
+
+  <noscript><div class="noscript-message">Vui lòng bật JavaScript để chạy đồng hồ 3D.</div></noscript>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
