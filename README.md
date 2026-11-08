@@ -1,17 +1,22 @@
 # AURELION — Mechanical 3D Timepiece
 
-**AURELION** là dự án đồng hồ cơ khí 3D chạy trực tiếp trên trình duyệt, được phát triển dưới thương hiệu **Creative TNT** bởi **TNT MEMEFORGE STUDIO**.
+**AURELION** is an interactive 3D mechanical timepiece project created by **CREATIVE TNT**, a creative division of **TNT MEMEFORGE STUDIO**.
 
-> Thời gian, được chế tác thành nghệ thuật.
+> Time, crafted as an experience.
 
-AURELION kết hợp mặt số La Mã, phong cách kim loại cao cấp, mô hình bộ máy cơ khí nhiều tầng và khung xem 3D tương tác.
+AURELION combines a classic Roman numeral dial, premium metallic materials, a layered mechanical-inspired structure and an interactive 3D experience that runs directly in a web browser.
 
 ## Project Information
 
-- Version: 0.9 — HD First
-- Status: Prototype / Mechanical Object Study
-- Brand: Creative TNT
-- Developer: TNT MEMEFORGE STUDIO
+| Information | Details |
+|---|---|
+| Project Name | AURELION |
+| Version | 0.9 — HD First |
+| Status | Prototype / Mechanical Object Study |
+| Creative Division | CREATIVE TNT |
+| Parent Brand & Developer | TNT MEMEFORGE STUDIO |
+| Platform | Web Browser |
+| Main Focus | Interactive 3D Mechanical Timepiece |
 
 ## Features
 
@@ -20,8 +25,8 @@ AURELION kết hợp mặt số La Mã, phong cách kim loại cao cấp, mô h�
 - Real-time analog clock with hour, minute and second hands.
 - 11 selectable international time zones.
 - Vietnam time as the default timezone.
-- Free 3D viewing, rotation, zoom and fullscreen.
-- Two graphics modes: HD and MƯỢT.
+- Interactive 3D viewing with rotation, zoom and fullscreen.
+- Two graphics modes: **HD** and **MƯỢT**.
 - Custom SVG brand identity.
 - Export 3D geometry and materials to GLB format.
 
@@ -36,52 +41,77 @@ AURELION kết hợp mặt số La Mã, phong cách kim loại cao cấp, mô h�
 
 ## Getting Started
 
+### Requirements
+
+- A modern web browser.
+- Visual Studio Code.
+- Live Server extension for Visual Studio Code.
+- Internet connection for external dependencies such as Three.js and Google Fonts.
+
+### Run the Project
+
 1. Download or clone this repository.
 2. Open the project folder in Visual Studio Code.
 3. Open `index.html`.
-4. Start Live Server using Go Live.
-5. Open the website in your browser.
+4. Start Live Server by clicking **Go Live**.
+5. Open the local website in your browser.
 
-An Internet connection is required to load Three.js and Google Fonts.
+Running the project through a local development server is recommended.
 
 ## 3D Controls
 
-| Control | Action |
+| Control | Function |
 |---|---|
-| Drag | Rotate the model |
-| Mouse wheel | Zoom in / out |
-| + / − | Zoom controls |
-| 0 | Reset view |
-| F | Fullscreen |
-| HD | High-quality graphics |
-| MƯỢT | Performance mode |
+| Drag | Rotate the 3D model |
+| Mouse Wheel | Zoom in / out |
+| `+` / `-` | Adjust zoom |
+| `0` | Reset the view |
+| `F` | Toggle fullscreen |
+| HD | High-quality graphics mode |
+| MƯỢT | Performance-focused graphics mode |
 
 ## 3D Export
 
-AURELION supports exporting the model in `.GLB` format for use in Blender and game engines.
+AURELION supports exporting the 3D model in **GLB** format.
 
-The current export contains geometry and materials at the moment of export. Animation clips are not included.
+The exported file can be opened or further processed in compatible 3D software and game development tools, including Blender.
+
+**Export information:**
+
+- Format: `.glb`
+- Includes: Current 3D geometry and materials.
+- Does not include: Animation clips.
+- Export represents a snapshot of the current model rather than a complete animated clock system.
 
 ## Mechanical Architecture
 
-The model uses the ETA 2824-2 movement as an architectural reference.
+AURELION's mechanical design takes inspiration from the **ETA 2824-2** movement.
 
-This is a 3D mechanical design study, not an exact 1:1 CAD replica or manufacturing specification.
+The model is a creative 3D study and is not an exact 1:1 CAD replica, certified engineering model or manufacturing specification.
 
-Some dimensions, mechanical details and movements are simplified or simulated for web presentation.
+Some mechanical details are simplified or simulated for visual presentation and interactive performance.
 
 ## Future Development
 
-- Improve realistic 3D materials and geometry.
-- Refine mechanical movement architecture.
-- Improve rendering performance.
-- Develop better Blender and game-engine asset workflows.
-- Add more detailed animations.
+Potential development directions include:
+
+- Improving material quality and 3D geometry.
+- Refining the mechanical architecture and internal details.
+- Improving rendering performance and browser compatibility.
+- Expanding the 3D model and animation system.
+- Improving workflows for Blender and other 3D tools.
+- Exploring additional visual and interactive features.
+
+## Project Credits
+
+**AURELION**
+
+A project by **CREATIVE TNT**.
+
+A creative division of **TNT MEMEFORGE STUDIO**.
+
+Copyright © 2026 TNT MEMEFORGE STUDIO.
 
 ---
 
-**AURELION**  
-A product of **Creative TNT**  
-Developed by **TNT MEMEFORGE STUDIO**
-
-© Creative TNT / TNT MEMEFORGE STUDIO.
+*Time, crafted as an experience.*
