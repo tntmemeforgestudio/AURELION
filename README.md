@@ -102,6 +102,14 @@ Potential development directions include:
 - Improving workflows for Blender and other 3D tools.
 - Exploring additional visual and interactive features.
 
+## License
+
+AURELION is released under the **MIT License**.
+
+You are permitted to use, copy, modify, merge, publish, distribute, sublicense and sell copies of the software, subject to the conditions stated in the license.
+
+See the [LICENSE](LICENSE) file for the complete license text.
+
 ## Project Credits
 
 **AURELION**
